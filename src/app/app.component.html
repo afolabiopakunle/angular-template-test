@@ -4,17 +4,31 @@
   <form class="pt-2" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div class="form-group">
       <label for="exampleUserName">User name</label>
-      <input type="email" class="form-control" id="exampleUserName" aria-describedby="emailHelp" ngModel name="username" placeholder="Enter user name">
+      <input 
+      type="email" 
+      class="form-control" 
+      id="exampleUserName" aria-describedby="emailHelp" 
+      required ngModel 
+      name="username" 
+      placeholder="Enter user name">
       <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
     </div>
     <div class="form-group">
       <label for="exampleEmail">Email</label>
-      <input type="email" name="email" ngModel class="form-control" id="exampleEmail" placeholder="Email">
+      <input 
+      type="email" 
+      name="email" 
+      required 
+      email
+      ngModel 
+      class="form-control" 
+      id="exampleEmail" 
+      placeholder="Email">
     </div>
     <div class="form-check">
-      <input name="agree" ngModel type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input required name="agree" ngModel type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">I agree</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" [disabled]='myForm.invalid' class="btn btn-primary">Submit</button>
   </form>
 </div>

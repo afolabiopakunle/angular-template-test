@@ -8,10 +8,10 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent  {
   @ViewChild('myForm') signUpForm: NgForm;
-  
+
   username;
 
   onSubmit() {
-    console.log(this.signUpForm.value)
+    console.log(this.signUpForm.controls)
   }
 }
