@@ -31,7 +31,7 @@
 
     <div class="form-group">
     <label for="exampleFormControlSelect1">Select School</label>
-    <select required ngModel name="school" class="form-control" id="exampleFormControlSelect1">
+    <select required [ngModel]="defaultSchool" name="school" class="form-control" id="exampleFormControlSelect1">
       <option value="loyola">Loyola College</option>
       <option value="urbanDay">Urban Day</option>
       <option value="ikolaba">Ikolaba Grammar School</option>

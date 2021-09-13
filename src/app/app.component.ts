@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent  {
   @ViewChild('myForm') signUpForm: NgForm;
 
-  username;
+  defaultSchool: string = 'loyola';
 
   onSubmit() {
     console.log(this.signUpForm.controls)
