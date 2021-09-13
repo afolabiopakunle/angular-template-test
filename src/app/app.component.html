@@ -1,7 +1,20 @@
 <div class="container p-4">
-  <h2>Template Form</h2>
+  <h2 class="text-success">Template Form</h2>
 
-  <form>
-    
+  <form class="pt-2" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div class="form-group">
+      <label for="exampleUserName">User name</label>
+      <input type="email" class="form-control" id="exampleUserName" aria-describedby="emailHelp" ngModel name="username" placeholder="Enter user name">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleEmail">Email</label>
+      <input type="email" name="email" ngModel class="form-control" id="exampleEmail" placeholder="Email">
+    </div>
+    <div class="form-check">
+      <input name="agree" ngModel type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">I agree</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
