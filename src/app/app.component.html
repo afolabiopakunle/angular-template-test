@@ -39,10 +39,10 @@
       <option value="isi">Ibadan School International</option>
     </select>
     </div>
-    <div *ngFor="let gender of genders">
+    <div *ngFor="let gender of genders; let i = index">
       <div class="form-check mb-3">
-        <label class="form-check-label">
-        <input class="form-check-input" type="radio" ngModel name="gender" id="exampleRadios2" [value]="gender.value">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="{{i}}" [value]="gender.value">
+        <label class="form-check-label" for="{{i}}">
       {{ gender.key }}
     </label>
       </div>
