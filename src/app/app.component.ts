@@ -10,7 +10,7 @@ export class AppComponent  {
   @ViewChild('myForm') signUpForm: NgForm;
 
   defaultSchool: string = 'loyola';
-
+  genders = [{value: 'male', key: 'Male'}, {value: 'female', key: 'Female'}]
   onSubmit() {
     console.log(this.signUpForm.controls)
   }

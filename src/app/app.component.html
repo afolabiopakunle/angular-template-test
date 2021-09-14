@@ -4,43 +4,49 @@
   <form class="pt-2" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div class="form-group">
       <label for="exampleUserName">User name</label>
-      <input 
-      type="email" 
-      class="form-control" 
-      id="exampleUserName" aria-describedby="emailHelp" 
-      required ngModel 
+      <input
+      type="email"
+      class="form-control"
+      id="exampleUserName" aria-describedby="emailHelp"
+      required ngModel
       #name="ngModel"
-      name="username" 
+      name="username"
       placeholder="Enter user name">
       <small *ngIf="name.invalid && name.touched" id="emailHelp" class="form-text text-danger m-0">Required field</small>
     </div>
     <div class="form-group">
       <label for="exampleEmail">Email</label>
-      <input 
-      type="email" 
-      name="email" 
-      required 
+      <input
+      type="email"
+      name="email"
+      required
       email
-      [ngModel]='"Afolabi"' 
+      [ngModel]='"Afolabi"'
       #email="ngModel"
-      class="form-control" 
-      id="exampleEmail" 
+      class="form-control"
+      id="exampleEmail"
       placeholder="Email">
       <small *ngIf="email.invalid && email.touched" id="emailHelp" class="form-text text-danger m-0">Required field</small>
     </div>
 
     <div class="form-group">
-    <label for="exampleFormControlSelect1">Select School</label>
-    <select required [ngModel]="defaultSchool" name="school" class="form-control" id="exampleFormControlSelect1">
+      <label for="exampleFormControlSelect1">Select School</label>
+      <select required [ngModel]="defaultSchool" name="school" class="form-control" id="exampleFormControlSelect1">
       <option value="loyola">Loyola College</option>
       <option value="urbanDay">Urban Day</option>
       <option value="ikolaba">Ikolaba Grammar School</option>
       <option value="gci">Goverment College, Ibadan</option>
       <option value="isi">Ibadan School International</option>
     </select>
-  </div>
-
-
+    </div>
+    <div *ngFor="let gender of genders">
+      <div class="form-check mb-3">
+        <label class="form-check-label">
+        <input class="form-check-input" type="radio" ngModel name="gender" id="exampleRadios2" [value]="gender.value">
+      {{ gender.key }}
+    </label>
+      </div>
+    </div>
     <div class="form-check">
       <input required name="agree" ngModel type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">I agree</label>
